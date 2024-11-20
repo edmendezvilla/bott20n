@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+#Configuracion de spring
+spring:
+  #Configuracion de migracion
+  flyway:
+    enabled: true
+    baselineVersion: 1
+    locations:
+      classpath: db/migration
+    sqlMigrationSuffixes: .sql
+    baselineOnMigrate: true
+    sqlMigrationPrefix: V
+    schemas: public
+
+  datasource:
+    url: jdbc:postgresql://salt.db.elephantsql.com:5432/vcjrpblg?socketTimeout=3
+    username: vcjrpblg
+    password: EHfKCeO33g4y8NbS27PxeHzVjD1j1zmP
+    driverClassName: org.postgresql.Driver
+
